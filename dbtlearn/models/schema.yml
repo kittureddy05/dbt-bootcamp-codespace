@@ -25,18 +25,23 @@ models:
         tests:
           - positive_value
   - name: dim_hosts_cleansed
+    description: Cleansed table which contains Airbnb listings.
     columns:
       - name: host_id
+        description: The host's id. References the host table.
         tests:
           - not_null
           - unique
       - name: host_name
+        description: names of hosts.
         tests:
           - not_null
       - name: is_superhost
+        description: superhosts details.
         tests:
           - accepted_values:
               values: ['t', 'f']
+            
   - name: fct_reviews
     columns:
       - name: listing_id
